@@ -23,14 +23,18 @@ jobs:
       - name: Run script
         run: python merge_ads.py
 
+      - name: Get short SHA
+        id: vars
+        run: echo ::set-output name=sha_short:${GITHUB_SHA::7}
+
       - name: Create release
         id: create_release
         uses: actions/create-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}
         with:
-          tag_name: ${{ github.ref }}
-          release_name: Release ${{ github.ref }}
+          tag_name: v${{ steps.vars.outputs.sha_short }}
+          release_name: Release ${{ steps.vars.outpusts.sha_short }}
           draft: false
           prerelease: false
  
