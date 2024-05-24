@@ -3,6 +3,9 @@ on:
   push:
     paths:
       - 'release-versions/*'
+    branches:
+      - main
+
 jobs:
   update-list:
     runs-on: ubuntu-latest
