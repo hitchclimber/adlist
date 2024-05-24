@@ -16,7 +16,7 @@ jobs:
         run: mkdir -p ../release-versions
       - name: Fetch release version
         run: |
-          curl -sL https://github.com/StevenBlack/hosts/releases/latest | \
+          curl https://api.github.com/repos/StevenBlack/hosts/releases/latest | \
           jq -r ".tag_name" > ../release-versions/upstr_list_latest.txt
       - name: Check for modified files
         id: git-check
