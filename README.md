@@ -11,6 +11,6 @@ Contains an adlist for use with Pi-hole. Merged this from:
 - https://blocklistproject.github.io/Lists/ransomware.txt
 - https://blocklistproject.github.io/Lists/scam.txt
 
-With many thanks to the maintainers of the original lists.
+Thanks to the maintainers of the original lists.
 
-Disclaimer: I do not maintain this regularly. You're welcome to use the script to update the list, provided the maintainers of the original lists keep them up to date.
+Every Saturday night, the `check_upstram.yaml` will check Stephen Black's repository for changes and update `ad_list.txt` accordingly. I didn't spend much time checking the other lists' update schedule but checking one of the better maintained ones once a week will probably do fine.
