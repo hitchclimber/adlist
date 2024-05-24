@@ -1,4 +1,4 @@
-name: Update lists
+name: Check for updates
 
 on:
   workflow_dispatch:
