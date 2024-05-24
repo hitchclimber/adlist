@@ -1,8 +1,9 @@
 name: Update lists
 
 on:
-workflow_dispatch:
-  - cron: '* 3 * * 5'
+  workflow_dispatch:
+  schedule:
+    - cron: '* 3 * * 5'
 
 jobs:
   get-version:
