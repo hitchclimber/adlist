@@ -3,10 +3,6 @@ on:
   push:
     paths:
       - 'release-versions/*'
-    branches:
-      - main
-    workflow_dispatch:
-
 jobs:
   update-list:
     runs-on: ubuntu-latest
