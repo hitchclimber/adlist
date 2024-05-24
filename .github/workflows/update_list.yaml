@@ -5,6 +5,7 @@ on:
       - 'release-versions/*'
     branches:
       - main
+    workflow_dispatch:
 
 jobs:
   update-list:
