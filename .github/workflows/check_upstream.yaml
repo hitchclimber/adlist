@@ -13,11 +13,11 @@ jobs:
         with:
           token: ${{ secrets.REPO_SCOPED_TOKEN }}
       - name: Create release dir
-        run: mkdir -p ../release-versions
+        run: mkdir -p release-versions
       - name: Fetch release version
         run: |
           curl https://api.github.com/repos/StevenBlack/hosts/releases/latest | \
-          jq -r ".tag_name" > ../release-versions/upstr_list_latest.txt
+            jq -r ".tag_name" > release-versions/upstr_list_latest.txt
       - name: Check for modified files
         id: git-check
         run: echo ::set-output name=modified::$([ -z "`git status --porcelain`" ] && echo "false" || echo "true")
