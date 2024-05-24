@@ -13,4 +13,4 @@ Contains an adlist for use with Pi-hole. Merged this from:
 
 Thanks to the maintainers of the original lists.
 
-Every Saturday night, the `check_upstram.yaml` will check Stephen Black's repository for changes and update `ad_list.txt` accordingly. I didn't spend much time checking the other lists' update schedule but checking one of the better maintained ones once a week will probably do fine.
+Every Saturday night, the `check_upstram.yaml` will check Steven Black's repository for changes and update `ad_list.txt` accordingly. I didn't spend much time checking the other lists' update schedule but checking one of the better maintained ones once a week will probably do fine.
