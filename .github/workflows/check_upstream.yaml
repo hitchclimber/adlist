@@ -3,7 +3,7 @@ name: Check for updates
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 3 * * 7'
+    - cron: '0 3 * * 6'
 
 jobs:
   get-version:
