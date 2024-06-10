@@ -9,7 +9,7 @@ on:
 jobs:
   update-list:
     runs-on: ubuntu-latest
-    if: github.event_name == 'push' && github.actor != 'github-actions[bot]'
+    if: github.event.commits[0].message != '[AUTO] new release'
     steps:
       - name: Checkout repo
         uses: actions/checkout@v2
