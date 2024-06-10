@@ -28,6 +28,6 @@ jobs:
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           touch release-versions/.gitkeep
           git add release-versions/upstr_list_latest.txt
-          git commit -am "new release"
+          git commit -am "[AUTO] new release"
           git push
 
