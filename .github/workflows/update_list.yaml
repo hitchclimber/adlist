@@ -9,6 +9,8 @@ on:
 jobs:
   update-list:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     if: github.event.commits[0].message == '[AUTO] new release'
     steps:
       - name: Checkout repo
@@ -34,7 +36,7 @@ jobs:
         id: create_release
         uses: actions/create-release@v1
         env:
-          GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           tag_name: v${{ env.COMMIT_SHORT_SHA }}
           release_name: Release ${{ steps.vars.outpusts.sha_short }}
@@ -44,7 +46,7 @@ jobs:
       - name: Upload release
         uses: actions/upload-release-asset@v1
         env:
-          GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: ad_list.txt
