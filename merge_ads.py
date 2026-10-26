@@ -20,8 +20,12 @@ async def merge_ads(urls):
     all = set()
     async with aiohttp.ClientSession() as session:
         tasks = [fetch_url(session, url) for url in urls]
-        results = await asyncio.gather(*tasks)
-        for content in results:
+        results = await asyncio.gather(*tasks, return_exceptions=True)
+
+        for url, content in zip(urls,results):
+            if isinstance(content, Exception):
+                print(f"skipping {url} because it returned exception: {content}")
+                continue
             all.update(read_list(content))
     return all
 
