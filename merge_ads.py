@@ -95,7 +95,6 @@ if __name__ == "__main__":
         "https://v.firebog.net/hosts/RPiList-Malware.txt",
         "https://raw.githubusercontent.com/Spam404/lists/master/main-blacklist.txt",
         "https://raw.githubusercontent.com/AssoEchap/stalkerware-indicators/master/generated/hosts",
-        "https://urlhaus.abuse.ch/downloads/hostfile/"
     ]
     ads = asyncio.run(merge_ads(urls))
     save_list("ad_list.txt", ads)
